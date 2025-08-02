@@ -143,7 +143,7 @@ if __name__ == "__main__":
     logger = setup_logging("transform.log")
     
     if len(sys.argv) != 7:
-        logger.critical("Usage: python3 transform/execute.py <input_dir> <output_dir>")
+        logger.critical("Usage: python3 transform/execute.py <input_dir> <output_dir> d_mem e_mem e_core e_inst")
         sys.exit(1)
     
     input_dir = sys.argv[1]
