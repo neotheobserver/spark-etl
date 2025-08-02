@@ -142,17 +142,18 @@ if __name__ == "__main__":
 
     logger = setup_logging("transform.log")
     
-    if len(sys.argv) != 7:
-        logger.critical("Usage: python3 transform/execute.py <input_dir> <output_dir> d_mem e_mem e_core e_inst")
+    if len(sys.argv) != 8:
+        logger.critical("Usage: python3 transform/execute.py <input_dir> <output_dir> master_ip d_mem e_mem e_core e_inst")
         sys.exit(1)
     
     input_dir = sys.argv[1]
     output_dir = sys.argv[2]
     spark_config = {}
-    spark_config["driver_memory"] = sys.argv[3]
-    spark_config["executor_memory"] = sys.argv[4]
-    spark_config["executor cores"] = sys.argv[5]
-    spark_config["executor_instances"] = sys.argv[6]
+    spark_config["master_ip"] = sys.argv[3]
+    spark_config["driver_memory"] = sys.argv[4]
+    spark_config["executor_memory"] = sys.argv[5]
+    spark_config["executor cores"] = sys.argv[6]
+    spark_config["executor_instances"] = sys.argv[7]
     
     start = time.time()
     spark = create_spark_session(logger, spark_config)

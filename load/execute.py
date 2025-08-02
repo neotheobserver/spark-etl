@@ -141,10 +141,11 @@ if __name__ == "__main__":
     pg_host = sys.argv[4]
 
     spark_config = {}
-    spark_config["driver_memory"] = sys.argv[5]
-    spark_config["executor_memory"] = sys.argv[6]
-    spark_config["executor cores"] = sys.argv[7]
-    spark_config["executor_instances"] = sys.argv[8]
+    spark_config["master_ip"] = sys.argv[5]
+    spark_config["driver_memory"] = sys.argv[6]
+    spark_config["executor_memory"] = sys.argv[7]
+    spark_config["executor cores"] = sys.argv[8]
+    spark_config["executor_instances"] = sys.argv[9]
     
     logger.info("Load stage started")
     start = time.time()
