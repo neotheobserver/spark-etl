@@ -132,7 +132,7 @@ if __name__ == "__main__":
     logger = setup_logging("load.log")
 
     if len(sys.argv) != 9:
-        logger.error("Usage: python load/execute.py <input_dir> <pg_un> <pg_pw> pg_host d_mem e_mem e_core e_inst")
+        logger.error("Usage: python load/execute.py <input_dir> <pg_un> <pg_pw> pg_host master_ip d_mem e_mem e_core e_inst")
         sys.exit(1)
     
     input_dir = sys.argv[1]
